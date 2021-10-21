@@ -1,26 +1,18 @@
-import setuptools
+from setuptools import setup, find_packages
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-
-setuptools.setup(
-    name="example-pkg-gardart",
-    version="0.0.2",
-    author="Example Author",
-    author_email="author@example.com",
-    description="A small example package",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
-    project_urls={
-        "Bug Tracker": "https://github.com/pypa/sampleproject/issues",
-    },
+setup(
+    name="gth-timechecker",
+    version="0.0.5",
+    author="Garðar Þorsteinsson",
+    author_email="gardart@gmail.com",
+    url="https://",
+    description="An aplication that informs you of the time in different locations and timezones",
+    packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
-    python_requires=">=3.6",
+    install_requires=["click", "pytz"],
+    entry_points={"console_scripts": ["timechecker = src.main:main"]},
 )
