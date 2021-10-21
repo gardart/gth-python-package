@@ -58,6 +58,10 @@ jobs:
       continue-on-error: true
 
     - name: Run tests
+      run: python -m pytest
+      continue-on-error: true
+
+    - name: Run tests
       run: coverage run -m pytest
       continue-on-error: true
 
