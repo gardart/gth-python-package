@@ -32,15 +32,15 @@ jobs:
             # exit-zero treats all errors as warnings.
             flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-    - name: GitHub Action for pytest
-      uses: cclauss/GitHub-Action-for-pytest@0.5.0
-      with:
-        args: pytest -h
-
     - name: GitHub Action for pylint
       uses: cclauss/GitHub-Action-for-pylint@0.7.0
       with:
         args: "pip install . ; pylint **/*.py"
+
+    - name: GitHub Action for pytest
+      uses: cclauss/GitHub-Action-for-pytest@0.5.0
+      with:
+        args: pytest
 
     - name: Install pypa/build
       run: >-
