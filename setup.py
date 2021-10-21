@@ -5,7 +5,7 @@ setup(
     version="0.0.5",
     author="Garðar Þorsteinsson",
     author_email="gardart@gmail.com",
-    url="https://",
+    url="https://example.com",
     description="An aplication that informs you of the time in different locations and timezones",
     packages=find_packages(),
     classifiers=[
