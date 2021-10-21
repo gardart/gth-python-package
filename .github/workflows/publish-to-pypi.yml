@@ -36,13 +36,13 @@ jobs:
       uses: cclauss/GitHub-Action-for-pylint@0.7.0
       with:
         args: "pip install . ; pylint **/*.py"
-      #if: ${{ false }}
+      if: ${{ false }}
       continue-on-error: true
 
     - name: GitHub Action for pytest
       uses: cclauss/GitHub-Action-for-pytest@0.5.0
       with:
-        args: "pip install . ; pytest"
+        args: "python -m pip install . --user ; python -m pytest"
         #args: "pip install -r requirements.txt ; pytest"
 
     - name: Install pypa/build
@@ -59,11 +59,6 @@ jobs:
         --wheel
         --outdir dist/
         .
-      if: ${{ false }}
-    - name: Build a binary wheel and a source tarball
-      run: >-
-        python -m
-        build
     - name: Publish distribution 📦 to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
