@@ -55,12 +55,15 @@ jobs:
 
     - name: Check PEP8 compliance
       run: pycodestyle --ignore=W504,E501 src/
+      continue-on-error: true
 
     - name: Run tests
       run: coverage run -m pytest
+      continue-on-error: true
 
     - name: Show coverage report
       run: coverage report --skip-covered --omit *tests*
+      continue-on-error: true
 
     - name: Install pypa/build
       run: >-
