@@ -37,17 +37,17 @@ jobs:
           # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
-			- name: Check PEP8 compliance
-				run: pycodestyle --ignore=W504,E501 src/
-				continue-on-error: true
-				#if: ${{ false }} # Disable this step
+      - name: Check PEP8 compliance
+        run: pycodestyle --ignore=W504,E501 src/
+        continue-on-error: true
+        #if: ${{ false }} # Disable this step
 
-			- name: Run tests
-				run: coverage run -m pytest
-				continue-on-error: true
-				#if: ${{ false }} # Disable this step
+      - name: Run tests
+        run: coverage run -m pytest
+        continue-on-error: true
+        #if: ${{ false }} # Disable this step
 
-			- name: Show coverage report
-				run: coverage report --skip-covered --omit *tests*
-				continue-on-error: true
+      - name: Show coverage report
+        run: coverage report --skip-covered --omit *tests*
+        continue-on-error: true
 				#if: ${{ false }} # Disable this step

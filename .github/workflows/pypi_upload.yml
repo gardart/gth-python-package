@@ -24,7 +24,7 @@ jobs:
           python setup.py bdist_wheel
           python setup.py sdist
 
-			- name: Upload to PyPI Test via Twine
+      - name: Upload to PyPI Test via Twine
         env:
           TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
         run: |
