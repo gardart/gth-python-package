@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="gth-timechecker",
-    version="0.0.8",
+    version="0.0.9",
     author="Garðar Þorsteinsson",
     author_email="gardart@gmail.com",
     url="https://example.com",
