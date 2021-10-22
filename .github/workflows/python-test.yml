@@ -50,4 +50,3 @@ jobs:
       - name: Show coverage report
         run: coverage report --skip-covered --omit *tests*
         continue-on-error: true
-				#if: ${{ false }} # Disable this step
